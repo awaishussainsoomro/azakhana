@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AzaKhana
 
-## Getting Started
+**Every Noha. One place.**
 
-First, run the development server:
+AzaKhana is a full-stack streaming and discovery platform for Nohay (Islamic devotional audio/video), built to make it easy to find, organize, and listen to content by Nohakhan, occasion (Munasabat), and year all in one clean, fast, ad-free experience.
+
+🔗 **Live site:** [your-deployed-url-here]
+
+## Why This Exists
+
+Existing Nohay platforms are often cluttered, poorly organized, or built as basic YouTube aggregators with no real structure. AzaKhana was built to solve a genuine discovery problem: finding a specific Noha by reciter, by occasion, or by year should take seconds, not endless scrolling.
+
+## Features
+
+- **Multi-path discovery** — browse by Nohakhan, by Munasabat (occasion), by year, or search directly with live filters
+- **Year-wise Nohakhan profiles** — each reciter's catalog organized into collapsible year albums
+- **Custom video player** — YouTube-embedded with a branded end-of-video overlay and "more from this Nohakhan" recommendations
+- **Full admin panel** — password-protected content management for Nohakhans, Munasabat, and Nohay entries, including bulk import directly from YouTube playlists
+- **Real-time view tracking** — powers a genuine Trending section based on actual engagement
+- **Fully responsive** — dark-themed, mobile-first design with a sticky, blurred navigation bar
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS v4
+- **Database:** MongoDB Atlas with Mongoose
+- **Hosting:** Vercel
+- **APIs:** YouTube Data API v3 (bulk playlist import), YouTube IFrame Player API (custom player controls)
+
+## Architecture Highlights
+
+- **ISR (Incremental Static Regeneration)** on high-traffic pages (Homepage, Nohakhan profiles, listing pages) for performance, while the Nohay player page stays fully dynamic to preserve accurate view counting
+- **Many-to-many relationships** a single Nohay can belong to multiple Munasabat (occasions), reflecting real-world content that spans multiple religious dates
+- **Debounced live search** with server-side filtering across title, Nohakhan name, and tags
+- **Custom admin authentication** via HTTP-only session cookies, with every write-access API route independently verified not just gated at the page level
+
+## Getting Started (Local Development)
+
+```bash
+git clone https://github.com/awaishussainsoomro/azakhana.git
+cd azakhana
+npm install
+```
+
+Create a `.env.local` file in the root with:
+MONGODB_URI=your_mongodb_connection_string
+ADMIN_PASSWORD=your_admin_password
+YOUTUBE_API_KEY=your_youtube_api_key
+
+Then run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Project Structure
+src/
+├── app/ # Pages and API routes (Next.js App Router)
+│ ├── admin/ # Password-protected admin panel
+│ ├── api/ # API routes (search, admin CRUD, YouTube integration)
+│ ├── nohakhan/ # Dynamic Nohakhan profile pages
+│ ├── nohay/ # Dynamic Nohay player pages
+│ └── ...
+├── components/ # Reusable UI components
+├── lib/ # Database connection, YouTube helper utilities
+└── models/ # Mongoose schemas (Nohakhan, Nohay, Munasabat)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Roadmap
 
-To learn more about Next.js, take a look at the following resources:
+- Light mode toggle (dark theme currently default and only option)
+- Direct reciter partnerships for original content hosting
+- Expansion beyond Nohay to Majlis, Naat, and Qasida content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Built by [Awais Hussain](https://github.com/awaishussainsoomro) — a full-stack learning project and a passion project for the Shia Muslim community.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*AzaKhana is an independent, community-focused platform. It is not affiliated with any specific Nohakhan, organization, or production house.*
