@@ -76,7 +76,7 @@ src/
 
 ## Author
 
-Built by [Awais Hussain](https://github.com/awaishussainsoomro) a full-stack learning project and a passion project for the Shia Muslim community.
+Built by [Awais Hussain](https://www.linkedin.com/in/awais-hussain-a17ba52aa/) a full-stack learning project and a passion project for the Shia Muslim community.
 
 ---
 
