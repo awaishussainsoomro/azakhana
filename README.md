@@ -57,7 +57,6 @@ Visit `http://localhost:3000`.
 
 ## Project Structure
 src/
-
 ├── app/ # Pages and API routes (Next.js App Router)
 
 │ ├── admin/ # Password-protected admin panel
