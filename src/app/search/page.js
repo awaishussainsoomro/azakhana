@@ -32,13 +32,13 @@ export default function SearchPage() {
   const [yearOptions, setYearOptions] = useState(["All"]);
 
   useEffect(() => {
-    fetch("/api/admin/nohakhan/list")
+    fetch("/api/nohakhan/list")
       .then((res) => res.json())
       .then((data) =>
         setNohakhanOptions(["All", ...(data.nohakhans || []).map((n) => n.name)])
       );
 
-    fetch("/api/admin/munasabat/list")
+    fetch("/api/munasabat/list")
       .then((res) => res.json())
       .then((data) =>
         setMunasabatOptions(["All", ...(data.munasabat || []).map((m) => m.name)])
