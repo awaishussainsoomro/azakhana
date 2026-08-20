@@ -4,7 +4,7 @@
 
 AzaKhana is a full-stack streaming and discovery platform for Nohay (Islamic devotional audio/video), built to make it easy to find, organize, and listen to content by Nohakhan, occasion (Munasabat), and year all in one clean, fast, ad-free experience.
 
-🔗 **Live site:** [your-deployed-url-here]
+🔗 **Live site:** [https://azakhana.vercel.app/]
 
 ## Why This Exists
 
