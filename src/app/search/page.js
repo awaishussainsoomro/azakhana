@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -11,7 +11,7 @@ const filterConfig = {
   language: ["All", "Urdu", "Punjabi", "Saraiki", "Sindhi", "Arabic", "English", "Other"],
 };
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -226,8 +226,16 @@ export default function SearchPage() {
             </div>
           )}
         </div>
-      </main >
+           </main>
       <Footer />
     </>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-bg" />}>
+      <SearchContent />
+    </Suspense>
   );
 }
