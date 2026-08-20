@@ -55,8 +55,7 @@ npm run dev
 
 Visit `http://localhost:3000`.
 
-## Project Structure
-src/
+## Project Structure src/
 ├── app/ # Pages and API routes (Next.js App Router)
 │ ├── admin/ # Password-protected admin panel
 │ ├── api/ # API routes (search, admin CRUD, YouTube integration)
@@ -66,7 +65,6 @@ src/
 ├── components/ # Reusable UI components
 ├── lib/ # Database connection, YouTube helper utilities
 └── models/ # Mongoose schemas (Nohakhan, Nohay, Munasabat)
-
 
 ## Roadmap
 
