@@ -57,23 +57,16 @@ Visit `http://localhost:3000`.
 
 ## Project Structure
 src/
-├── app/ # Pages and API routes (Next.js App Router)
-
-│ ├── admin/ # Password-protected admin panel
-
+|── app/ # Pages and API routes (Next.js App Router)
+| ├── admin/ # Password-protected admin panel
 │ ├── api/ # API routes (search, admin CRUD, YouTube integration)
-
 │ ├── nohakhan/ # Dynamic Nohakhan profile pages
-
 │ ├── nohay/ # Dynamic Nohay player pages
-
 │ └── ...
-
 ├── components/ # Reusable UI components
-
 ├── lib/ # Database connection, YouTube helper utilities
-
 └── models/ # Mongoose schemas (Nohakhan, Nohay, Munasabat)
+
 
 ## Roadmap
 
