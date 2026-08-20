@@ -46,7 +46,7 @@ export default function Hero() {
           Search, discover and listen to Nohay by Nohakhan, Munasabat and year.
         </p>
 
-        <form onSubmit={handleSearch} className="flex items-center gap-2 bg-surface border border-border rounded-full pl-5 pr-1 py-1 max-w-lg mx-auto shadow-lg shadow-black/40">
+                <form onSubmit={handleSearch} className="flex items-center gap-2 bg-surface border border-border rounded-full pl-4 sm:pl-5 pr-1 py-1 max-w-lg mx-auto shadow-lg shadow-black/40 w-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-4 h-4 text-text-muted shrink-0"
@@ -61,16 +61,16 @@ export default function Hero() {
               d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"
             />
           </svg>
-          <input
+                    <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search by title, Nohakhan, or year"
-            className="flex-1 bg-transparent text-sm text-text-primary placeholder:text-text-muted outline-none py-3"
+            placeholder="Search Nohay..."
+            className="flex-1 min-w-0 bg-transparent text-sm text-text-primary placeholder:text-text-muted outline-none py-3"
           />
           <button
             type="submit"
-            className="bg-accent text-white text-sm font-medium px-6 py-2.5 rounded-full shrink-0"
+            className="bg-accent text-white text-sm font-medium px-4 sm:px-6 py-2.5 rounded-full flex-shrink-0 whitespace-nowrap"
           >
             Search
           </button>
